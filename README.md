@@ -1,12 +1,10 @@
 # Advanced Lane Finding
-An advanced lane finding using OpenCV and python. As seen in the previous implementation [SDC_LaneDetection](https://github.com/arpitbaheti/SDC1-P4), the lane finding is based on edge detection and line fitting on top of the edges detected. In the advanced approach mentioned below, a histogram based lane detection is detailed which has a capability of tracking the lanes detected earlier. This approach also calculates the curvature of the lane and position of the vehicle from centre of the lane marking facilitating precise control of actuators.
-
-### Note: Headings of sections mentioned below are mentioned in the code as comments. Hence vey less reference is given to location of corresponding section in the code
+An advanced lane finding using OpenCV and python. Which detec edges and fits the line on top of the detected edges. In the advanced approach mentioned below, a histogram based lane detection is detailed. This approach also calculates the curvature of the lane and position of the vehicle from centre of the lane.
 
 Steps involved in finding lanes markings:
 
- 1.   Compute camera calibration matrix and distortion coefficients given a set of chessboard images
- 2.   Preprocess input images
+ 1.   Camera calibration matrix computation and distortion coefficients computation given a set of chessboard images
+ 2.   Preprocess input images (undistort, Sobel gradient, magnitude , directive gradient, hls binary, gaussiab blur)
  3.   Fit a second order polynomial over lane markings for both lanes separately
  4.   Overlay the lane markings on input image
  5.   Calculate radius of curvature and position of vehicle in the lane
